@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Your Name</title>
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --accent:#0066ff;
+      --muted:#6b7280;
+      --radius:12px;
+      --gap:18px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#eef3fb 60%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:36px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .container{
+      width:100%;
+      max-width:980px;
+      display:grid;
+      grid-template-columns:420px 1fr;
+      gap:var(--gap);
+      align-items:start;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:0 6px 22px rgba(15,23,42,0.08);
+    }
+    .info{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    h1{margin:0 0 4px 0;font-size:1.375rem}
+    p.lead{margin:0;color:var(--muted);font-size:0.95rem}
+    .contact-list{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+    .contact-item{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:0.95rem}
+    .contact-item b{color:#111827}
+    form{display:flex;flex-direction:column;gap:14px}
+    label{font-size:0.88rem;color:var(--muted);display:block;margin-bottom:6px}
+    input[type="text"], input[type="email"], textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border:1px solid #e6e9ee;
+      border-radius:10px;
+      font-size:0.95rem;
+      background:linear-gradient(180deg,#fff,#fbfdff);
+      transition:box-shadow .15s, border-color .15s;
+    }
+    input:focus, textarea:focus, select:focus{
+      outline:none;
+      border-color:var(--accent);
+      box-shadow:0 6px 18px rgba(0,102,255,0.08);
+    }
+    textarea{min-height:140px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .actions{display:flex;gap:12px;align-items:center}
+    .btn{
+      display:inline-block;padding:11px 16px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:600;cursor:pointer;text-decoration:none;font-size:0.95rem;
+      box-shadow:0 8px 18px rgba(0,102,255,0.12);
+    }
+    .btn.secondary{background:#f3f6ff;color:var(--accent);box-shadow:none;border:1px solid rgba(0,102,255,0.08)}
+    .note{font-size:0.85rem;color:var(--muted)}
+    footer.small{font-size:0.82rem;color:var(--muted);margin-top:10px}
+    @media (max-width:900px){
+      .container{grid-template-columns:1fr;}
+      .row{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="card info" aria-labelledby="contact-heading">
+      <div>
+        <h1 id="contact-heading">Get in touch</h1>
+        <p class="lead">Have a question or want to work together? Send a message — I usually reply within 1–2 business days.</p>
+      </div>
+      <div class="contact-list" aria-hidden="false">
+        <div class="contact-item"><span>📧</span><div><b>Email:</b> <span>hello@example.com</span></div></div>
+        <div class="contact-item"><span>📍</span><div><b>Location:</b> <span>City, Country</span></div></div>
+        <div class="contact-item"><span>💼</span><div><b>Work:</b> <span>Open for freelance</span></div></div>
+      </div>
+      <footer class="small">Prefer social? Find me on LinkedIn or Twitter.</footer>
+    </section>
+
+    <section class="card" aria-labelledby="form-heading">
+      <h2 id="form-heading" style="margin-top:0;margin-bottom:6px;font-size:1.05rem">Send a message</h2>
+      <p class="note">This is a static example (HTML + CSS only). Forms here won't be sent without a backend.</p>
+      <form action="" method="post" onsubmit="return false;" novalidate>
+        <div class="row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@domain.com" required>
+          </div>
+        </div>
+
+        <div>
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="Brief subject">
+        </div>
+
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Send message</button>
+          <a class="btn secondary" href="mailto:hello@example.com">Email directly</a>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
